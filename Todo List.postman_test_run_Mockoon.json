@@ -1,0 +1,125 @@
+{
+	"id": "b9f93cbc-6478-4443-b5d6-1e4980edb7ba",
+	"name": "Todo List",
+	"timestamp": "2025-10-31T15:48:40.117Z",
+	"collection_id": "47960389-140ae806-828a-4588-9d68-9d9261b65dab",
+	"folder_id": "47960389-500d47d0-2d0f-4b0c-8822-0949dcf542bb",
+	"environment_id": "0",
+	"totalPass": 2,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-10-31T15:48:39.222Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "8a1b139c-931a-48f2-9716-0143cccb7880",
+			"name": "Получение списка задач",
+			"url": "http://localhost:3000",
+			"time": 30,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				30
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7171e1a6-7d96-4feb-85f0-67ca2cc4392f",
+			"name": "Получение пустого списка задач ",
+			"url": "http://localhost:3000",
+			"time": 29,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				29
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "cc0c880c-11dc-483b-87fe-80564d154862",
+			"name": "Добавление задачи",
+			"url": "http://localhost:3000",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7a5ff970-2cf4-4d34-9d38-88aebecffad0",
+			"name": "Добавление задачи с ошибкой в названии",
+			"url": "http://localhost:3000",
+			"time": 17,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 500": true,
+				"Error message is correct": true
+			},
+			"testPassFailCounts": {
+				"Status code is 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error message is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				17
+			],
+			"allTests": [
+				{
+					"Status code is 500": true,
+					"Error message is correct": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 82,
+	"collection": {
+		"requests": [
+			{
+				"id": "8a1b139c-931a-48f2-9716-0143cccb7880",
+				"method": "GET"
+			},
+			{
+				"id": "7171e1a6-7d96-4feb-85f0-67ca2cc4392f",
+				"method": "GET"
+			},
+			{
+				"id": "cc0c880c-11dc-483b-87fe-80564d154862",
+				"method": "POST"
+			},
+			{
+				"id": "7a5ff970-2cf4-4d34-9d38-88aebecffad0",
+				"method": "POST"
+			}
+		]
+	}
+}

@@ -1,0 +1,193 @@
+{
+  "uuid": "76e20f73-984d-45f0-bffb-bb0065c1a0bb",
+  "lastMigration": 33,
+  "name": "ToDoMock",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3000,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "dad6f6c0-654e-4212-9acf-4e3f46d46a0b",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "",
+      "responses": [
+        {
+          "uuid": "4367e3f0-d503-46e0-8390-c6110eae0825",
+          "body": "[]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "пустой (для заголовка)",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "result",
+              "value": "empty list",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "e4e975b4-c0d0-4933-aecb-0b12b929c3ab",
+          "body": "[\r\n  {\r\n    \"id\": 1,\r\n    \"title\": \"Изучить Mockoon\",\r\n    \"completed\": false\r\n  },\r\n  {\r\n    \"id\": 2,\r\n    \"title\": \"Настроить первый запрос\",\r\n    \"completed\": true\r\n  },\r\n  {\r\n    \"id\": 3,\r\n    \"title\": \"Протестировать API\",\r\n    \"completed\": false\r\n  }\r\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "df8832e3-b786-4057-9cc5-c19513bbc8a8",
+      "type": "http",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "",
+      "responses": [
+        {
+          "uuid": "3e07513f-fe52-4826-afe3-044611dd4d06",
+          "body": "{\r\n  \"message\": \"Недопустимое имя\"\r\n}",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "ошибка",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "title",
+              "value": "ошибка",
+              "invert": false,
+              "operator": "regex"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "a0cf4cc0-ab48-4787-a33c-3291d3b7a2db",
+          "body": "{\r\n  \"id\": \"{{faker 'string.uuid'}}\",\r\n  \"title\": \"Новая задача из Mockoon\",\r\n  \"completed\": false\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "нормальное создание",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "dad6f6c0-654e-4212-9acf-4e3f46d46a0b"
+    },
+    {
+      "type": "route",
+      "uuid": "df8832e3-b786-4057-9cc5-c19513bbc8a8"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}
